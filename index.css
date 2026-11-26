@@ -1,3 +1,151 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 20px;
     background-color: #1b1b1b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.titulo-stats{
+    max-width: 900px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #a0a0a0;
+}
+
+.titulo-stats h1{
+    margin: 0;
+    font-size: 2rem;
+}
+
+.grand-champion{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.stats{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.trofeus,
+.melhor-temporada,
+.conta,
+.graficos,
+.decks{
+    min-height: 180px;
+    padding: 24px;
+    border: 1px solid #555;
+}
+
+.trofeus,
+.melhor-temporada,
+.conta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.trofeus p,
+.melhor-temporada p,
+.conta p{
+    margin: 6px 0;
+}
+
+.trophy-icon,
+.calendar{
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.melhor-liga{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grand-champion-menor{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.graficos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #a0a0a0;
+}
+
+.graficos p{
+    margin: 4px 0;
+}
+
+.decks{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.titulo-decks{
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.deck{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.deck p{
+    margin: 0;
+}
+
+.deck img{
+    width: 80px;
+    height: 100px;
+    object-fit: contain;
+}
+
+@media (max-width: 650px){
+    .titulo-stats{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stats,
+    .decks{
+        grid-template-columns: 1fr;
+    }
+
+    .decks,
+    .titulo-decks{
+        grid-column: 1;
+    }
 }

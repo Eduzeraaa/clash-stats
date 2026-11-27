@@ -4,41 +4,40 @@
 
 body{
     margin: 0;
-    min-height: 100vh;
-    padding: 40px 20px;
+    padding: 50px 20px;
     background-color: #1b1b1b;
     color: white;
     font-family: Arial, sans-serif;
+    font-size: 25px;
 }
 
 .titulo-stats{
-    max-width: 900px;
-    margin: 0 auto 30px;
+    width: 1400px;
+    margin: 0 auto 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 28px;
     color: #a0a0a0;
 }
 
 .titulo-stats h1{
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.6rem;
 }
 
 .grand-champion{
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
 }
 
 .stats{
-    width: 100%;
-    max-width: 900px;
+    width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 32px;
 }
 
 .trofeus,
@@ -46,8 +45,8 @@ body{
 .conta,
 .graficos,
 .decks{
-    min-height: 180px;
-    padding: 24px;
+    min-height: 300px;
+    padding: 40px;
     border: 1px solid #555;
 }
 
@@ -64,27 +63,20 @@ body{
 .trofeus p,
 .melhor-temporada p,
 .conta p{
-    margin: 6px 0;
+    margin: 10px 0;
 }
 
 .trophy-icon,
 .calendar{
-    width: 42px;
-    height: 42px;
+    width: 62px;
+    height: 62px;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }
 
-.melhor-liga{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
 .grand-champion-menor{
-    width: 48px;
-    height: 48px;
+    width: 110px;
+    height: 110px;
     object-fit: contain;
 }
 
@@ -97,22 +89,23 @@ body{
     color: #a0a0a0;
 }
 
-.graficos p{
-    margin: 4px 0;
+.graficos canvas{
+    width: 330px;
+    height: 330px;
 }
 
 .decks{
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 32px;
     text-align: center;
 }
 
 .titulo-decks{
     grid-column: 1 / -1;
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.6rem;
 }
 
 .deck{
@@ -120,7 +113,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 18px;
 }
 
 .deck p{
@@ -128,24 +121,101 @@ body{
 }
 
 .deck img{
-    width: 80px;
-    height: 100px;
+    width: 205px;
+    height: 185px;
     object-fit: contain;
 }
 
-@media (max-width: 650px){
-    .titulo-stats{
-        flex-direction: column;
-        text-align: center;
-    }
+.abrir-modal{
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
 
-    .stats,
-    .decks{
-        grid-template-columns: 1fr;
-    }
+.modal{
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
-    .decks,
-    .titulo-decks{
-        grid-column: 1;
-    }
+.modal.aberto{
+    display: flex;
+}
+
+.modal-conteudo{
+    position: relative;
+    width: 1250px;
+    padding: 35px;
+    border: 1px solid #777;
+    background-color: #252525;
+}
+
+.modal-conteudo h2{
+    margin: 0 0 25px;
+    text-align: center;
+}
+
+.fechar-modal{
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.detalhes-deck{
+    display: grid;
+    grid-template-columns: 850px 300px;
+    gap: 30px;
+    align-items: center;
+}
+
+.cartas-deck{
+    display: grid;
+    grid-template-columns: repeat(4, 190px);
+    grid-template-rows: repeat(2, 245px);
+    gap: 20px;
+    justify-content: center;
+}
+
+.carta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.carta img{
+    width: 155px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.carta p{
+    margin: 0;
+    font-size: 17px;
+}
+
+.estatisticas-deck{
+    text-align: center;
+}
+
+.estatisticas-deck p{
+    margin: 8px 0;
+    font-size: 19px;
+}
+
+.estatisticas-deck canvas{
+    width: 300px;
+    height: 300px;
+    margin-top: 15px;
 }

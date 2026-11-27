@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Clash Stats</title>
 </head>
 <body>
     <div class="titulo-stats">
-        <img class="grand-champion" src="grand-champion.png" alt="Grande Campeão">
+        <img class="grand-champion" src="assets/grand-champion.png" alt="Grande Campeão">
         <h1>Estatísticas - Eduzera</h1>
     </div>
     <div class="stats">
 
         <div class="trofeus">
-            <img class="trophy-icon" src="trophy.png" alt="Trophy Icon">
-            <p class="titulo-trofeus">Troféus Atuais</p>
-            <p class="trofeus-quantia">14832</p>
+            <img class="trophy-icon" src="assets/trophy.png" alt="Trophy Icon">
+            <p>Troféus Atuais</p>
+            <p>14832</p>
         </div>
 
         <div class="melhor-temporada">
-            <p class="titulo-melhor-temporada">Melhor temporada</p>
-            <img class="grand-champion-menor" src="grand-champion.png" alt="Grande Campeão"> <!-- Gostaria que a imagem ficasse pequena e centralizada ao lado da minha melhor liga -->
-            <p class="liga-melhor-temporada">Grande Campeão</p>
+            <p>Melhor temporada</p>
+            <img class="grand-champion-menor" src="assets/grand-champion.png" alt="Grande Campeão"> <!-- Gostaria que a imagem ficasse pequena e centralizada ao lado da minha melhor liga -->
+            <p>Grande Campeão</p>
         </div>
 
         <div class="conta">
-            <p class="titulo-conta">Idade da Conta</p>
-            <img class="calendar" src="calendar.png" alt="Calendário">
-            <p class="idade-da-conta">4 anos</p>
+            <p>Idade da Conta</p>
+            <img class="calendar" src="assets/calendar.png" alt="Calendário">
+            <p>4 anos</p>
         </div>
 
         <div class="graficos">
-            aqui está reservado espaço para gráficos, usando chart.js.
-            será um gráfico de rosca contendo as partidas, dividas em vitórias e derrotas
-            no meio do gráfico terá a porcentagem de winrate
+            <canvas id="battleChart" width="330" height="330"></canvas>
         </div>
 
 
@@ -43,18 +40,108 @@
         <div class="decks">
             <p class="titulo-decks">Principais Decks</p>
 
-            <p class="titulo-zenhog">Zen Hog (Deck Caseiro)</p>
-            <img class="zenhog-icon" src="MonkCard.png" alt="Zen Hog Icon">
+            <div class="deck">
+                <p>Zen Hog (Deck Caseiro)</p>
+                <button class="abrir-modal" data-modal="modal-zen-hog">
+                    <img src="assets/MonkCard.png" alt="Zen Hog Icon">
+                </button>
+            </div>
 
-            <p class="titulo-rc">Rocket Cycle</p>
-            <img class="rc-icon" src="RocketCard.png" alt="RC Icon">
+            <div class="deck">
+                <p>Rocket Cycle</p>
+                <button class="abrir-modal" data-modal="modal-rocket-cycle">
+                    <img src="assets/RocketCard.png" alt="RC Icon">
+                </button>
+            </div>
 
-            <p class="titulo-splashyard">Splashyard</p>
-            <img class="splashyard-icon" src="GraveyardCard.png" alt="Splashyard Icon">
+            <div class="deck">
+                <p>Splashyard</p>
+                <button class="abrir-modal" data-modal="modal-splashyard">
+                    <img src="assets/GraveyardCard.png" alt="Splashyard Icon">
+                </button>
+            </div>
         </div>
 
         <!-- Essas 3 imagens serão modais, que irão abrir na tela informações completas dos decks (vou baixar o resto das imagens ainda, vamos fazer isso mais pra frente), como o deck completo, vitórias, derrotas, e win rate de cada -->
-
     </div>
+
+    <div class="modal" id="modal-zen-hog">
+            <div class="modal-conteudo">
+                <button class="fechar-modal">×</button>
+                <h2>Zen Hog (Deck Caseiro)</h2>
+                <div class="detalhes-deck">
+                    <div class="cartas-deck">
+                        <div class="carta"><img src="assets/ExecutionerCardEvolution.png" alt="Executor Evoluído"><p>Executor Evo</p></div>
+                        <div class="carta"><img src="assets/MonkCard.png" alt="Monge"><p>Monge</p></div>
+                        <div class="carta"><img src="assets/TeslaCardEvolution.png" alt="Tesla Evoluída"><p>Tesla Evo</p></div>
+                        <div class="carta"><img src="assets/TheLogCard.png" alt="O Tronco"><p>O Tronco</p></div>
+                        <div class="carta"><img src="assets/IceSpiritCard.png" alt="Espírito de Gelo"><p>Espírito de Gelo</p></div>
+                        <div class="carta"><img src="assets/SkeletonsCard.png" alt="Esqueletos"><p>Esqueletos</p></div>
+                        <div class="carta"><img src="assets/RoyalDeliveryCard.png" alt="Encomenda Real"><p>Encomenda Real</p></div>
+                        <div class="carta"><img src="assets/hog-rider.png" alt="Corredor"><p>Hog Rider</p></div>
+                    </div>
+                    <div class="estatisticas-deck">
+                        <p><strong>Partidas:</strong> 875</p>
+                        <p><strong>Vitórias:</strong> 686</p>
+                        <p><strong>Derrotas:</strong> 189</p>
+                        <canvas id="grafico-zen-hog" width="300" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="modal" id="modal-rocket-cycle">
+            <div class="modal-conteudo">
+                <button class="fechar-modal">×</button>
+                <h2>Rocket Cycle</h2>
+                <div class="detalhes-deck">
+                    <div class="cartas-deck">
+                        <div class="carta"><img src="assets/KnightCardEvolution.png" alt="Cavaleiro Evoluído"><p>Cavaleiro Evo</p></div>
+                        <div class="carta"><img src="assets/ice-wizard-hero.png" alt="Mago de Gelo Herói"><p>Mago de Gelo Herói</p></div>
+                        <div class="carta"><img src="assets/TeslaCardEvolution.png" alt="Tesla Evoluída"><p>Tesla Evo</p></div>
+                        <div class="carta"><img src="assets/RocketCard.png" alt="Foguete"><p>Foguete</p></div>
+                        <div class="carta"><img src="assets/IceSpiritCard.png" alt="Espírito de Gelo"><p>Espírito de Gelo</p></div>
+                        <div class="carta"><img src="assets/SkeletonsCard.png" alt="Esqueletos"><p>Esqueletos</p></div>
+                        <div class="carta"><img src="assets/TheLogCard.png" alt="O Tronco"><p>O Tronco</p></div>
+                        <div class="carta"><img src="assets/RoyalDeliveryCard.png" alt="Encomenda Real"><p>Encomenda Real</p></div>
+                    </div>
+                    <div class="estatisticas-deck">
+                        <p><strong>Partidas:</strong> 464</p>
+                        <p><strong>Vitórias:</strong> 319</p>
+                        <p><strong>Derrotas:</strong> 145</p>
+                        <canvas id="grafico-rocket-cycle" width="300" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="modal" id="modal-splashyard">
+            <div class="modal-conteudo">
+                <button class="fechar-modal">×</button>
+                <h2>Splashyard</h2>
+                <div class="detalhes-deck">
+                    <div class="cartas-deck">
+                        <div class="carta"><img src="assets/BabyDragonCardEvolution.png" alt="Bebê Dragão Evoluído"><p>Baby Dragon Evo</p></div>
+                        <div class="carta"><img src="assets/ice-wizard-hero.png" alt="Mago de Gelo Herói"><p>Mago de Gelo Herói</p></div>
+                        <div class="carta"><img src="assets/KnightCardEvolution.png" alt="Cavaleiro Evoluído"><p>Cavaleiro Evo</p></div>
+                        <div class="carta"><img src="assets/GraveyardCard.png" alt="Cemitério"><p>Cemitério</p></div>
+                        <div class="carta"><img src="assets/TombstoneCard.png" alt="Lápide"><p>Lápide</p></div>
+                        <div class="carta"><img src="assets/barbarian-barrel.png" alt="Barril de Bárbaro"><p>Barril de Bárbaro</p></div>
+                        <div class="carta"><img src="assets/TornadoCard.png" alt="Tornado"><p>Tornado</p></div>
+                        <div class="carta"><img src="assets/PoisonCard.png" alt="Veneno"><p>Veneno</p></div>
+                    </div>
+                    <div class="estatisticas-deck">
+                        <p><strong>Partidas:</strong> 125</p>
+                        <p><strong>Vitórias:</strong> 67</p>
+                        <p><strong>Derrotas:</strong> 58</p>
+                        <canvas id="grafico-splashyard" width="300" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="grafico.js"></script>
+    <script src="modais.js"></script>
 </body>
 </html>

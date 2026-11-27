@@ -2,6 +2,9 @@ const vitorias = 5163;
 const derrotas = 3866;
 const totalPartidas = vitorias + derrotas;
 const winrate = ((vitorias / totalPartidas) * 100).toFixed(1);
+const corTextoGrafico = document.documentElement.classList.contains('modo-claro')
+  ? '#071a33'
+  : '#ffffff';
 
 const dadosGrafico = {
   labels: ['Vitórias', 'Derrotas'],
@@ -25,7 +28,7 @@ const textoWinrate = {
     if (!chartArea) return;
 
     ctx.save();
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = corTextoGrafico;
     ctx.font = 'bold 28px Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -47,7 +50,7 @@ new Chart(document.getElementById('battleChart'), {
     plugins: {
       legend: {
         labels: {
-          color: '#ffffff',
+          color: corTextoGrafico,
           padding: 22,
           boxWidth: 22,
           boxHeight: 22,

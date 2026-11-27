@@ -18,6 +18,9 @@ const decks = {
 
 // Guarda os gráficos já criados para não criar o mesmo gráfico duas vezes.
 const graficosCriados = {};
+const corTextoGraficoModal = document.documentElement.classList.contains('modo-claro')
+  ? '#071a33'
+  : '#ffffff';
 
 function criarGraficoDoDeck(modalId) {
   if (graficosCriados[modalId]) return;
@@ -34,7 +37,7 @@ function criarGraficoDoDeck(modalId) {
       if (!chartArea) return;
 
       ctx.save();
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = corTextoGraficoModal;
       ctx.font = 'bold 24px Arial';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -63,7 +66,7 @@ function criarGraficoDoDeck(modalId) {
       plugins: {
         legend: {
           labels: {
-            color: '#ffffff',
+            color: corTextoGraficoModal,
             font: { size: 15 }
           }
         }

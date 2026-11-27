@@ -1,0 +1,48 @@
+.modo-claro body{
+    background-color: #edf6ff !important;
+    color: #071a33 !important;
+}
+
+.modo-claro .trofeus,
+.modo-claro .melhor-temporada,
+.modo-claro .conta,
+.modo-claro .graficos,
+.modo-claro .decks,
+.modo-claro .rodape,
+.modo-claro .modal-conteudo,
+.modo-claro .formulario-login,
+.modo-claro .formulario-cadastro,
+.modo-claro .formulario-contato,
+.modo-claro .carrossel,
+.modo-claro .painel-acessibilidade{
+    background-color: #ffffff !important;
+    color: #071a33 !important;
+    border-color: #3b6389 !important;
+}
+
+.modo-claro input,
+.modo-claro textarea{
+    background-color: #edf6ff !important;
+    color: #071a33 !important;
+    border-color: #3b6389 !important;
+}
+
+.modo-claro input::placeholder,
+.modo-claro textarea::placeholder{
+    color: #40566b !important;
+}
+
+.modo-claro .nome-projeto,
+.modo-claro .titulo-stats{
+    color: #755300 !important;
+}
+
+.modo-claro .titulo-stats p,
+.modo-claro a,
+.modo-claro .graficos{
+    color: #163b60 !important;
+}
+
+.modo-claro .fechar-modal{
+    color: #071a33 !important;
+}

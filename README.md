@@ -51,7 +51,7 @@ HTML5, CSS3 (Flexbox e Grid), JavaScript puro, Canvas, Chart.js (via CDN jsDeliv
 2. Organização dos cards da página de estatísticas e das primeiras imagens (`ef751dc`, 26/11/2026).
 3. Desenvolvimento de modais e gráficos dos decks com apoio de IA (`3cd88f1`, 26/11/2026).
 4. Criação de rodapé, contato, carrossel e links de navegação (`641ffa7`, 27/11/2026).
-5. Implementação de tema claro/escuro, aumento de fonte e adaptação dos gráficos. Alterações ainda não registradas no momento da análise.
+5. Implementação de tema claro/escuro, aumento de fonte e adaptação dos gráficos (`9225754`, 27/11/2026)
 
 ## Acessibilidade
 

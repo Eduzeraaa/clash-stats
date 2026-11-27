@@ -5,8 +5,8 @@
 body{
     margin: 0;
     padding: 50px 20px;
-    background-color: #1b1b1b;
-    color: white;
+    background-color: #071a33;
+    color: #f7fbff;
     font-family: Arial, sans-serif;
     font-size: 25px;
 }
@@ -18,12 +18,17 @@ body{
     align-items: center;
     justify-content: center;
     gap: 28px;
-    color: #a0a0a0;
+    color: #ffd54a;
 }
 
 .titulo-stats h1{
     margin: 0;
     font-size: 2.6rem;
+}
+
+.titulo-stats p{
+    margin: 5px 0 0;
+    color: #d7e6f5;
 }
 
 .grand-champion{
@@ -47,7 +52,8 @@ body{
 .decks{
     min-height: 300px;
     padding: 40px;
-    border: 1px solid #555;
+    border: 1px solid #5c82a8;
+    background-color: #102a4c;
 }
 
 .trofeus,
@@ -86,7 +92,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #a0a0a0;
+    color: #d7e6f5;
 }
 
 .graficos canvas{
@@ -151,8 +157,8 @@ body{
     position: relative;
     width: 1250px;
     padding: 35px;
-    border: 1px solid #777;
-    background-color: #252525;
+    border: 1px solid #5c82a8;
+    background-color: #102a4c;
 }
 
 .modal-conteudo h2{
@@ -166,7 +172,7 @@ body{
     right: 18px;
     border: 0;
     background: transparent;
-    color: white;
+    color: #f7fbff;
     font-size: 38px;
     cursor: pointer;
 }
@@ -218,4 +224,27 @@ body{
     width: 300px;
     height: 300px;
     margin-top: 15px;
+}
+
+.rodape{
+    width: 1400px;
+    margin: 32px auto 0;
+    padding: 35px;
+    border: 1px solid #5c82a8;
+    background-color: #102a4c;
+    text-align: center;
+}
+
+.links-rodape{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.links-rodape a{
+    padding: 12px 28px;
+    border: 1px solid #ffd54a;
+    background-color: #ffd54a;
+    color: #071a33;
+    text-decoration: none;
 }

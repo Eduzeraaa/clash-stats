@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #071a33;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario-contato{
+    width: 850px;
+    padding: 65px;
+    border-radius: 10px;
+    background-color: #102a4c;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+h1{
+    margin: 0 0 8px;
+    color: #f7fbff;
+    text-align: center;
+    font-size: 4rem;
+}
+
+input,
+textarea{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #5c82a8;
+    border-radius: 5px;
+    background-color: #071a33;
+    color: #f7fbff;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    outline: none;
+}
+
+textarea{
+    height: 230px;
+    resize: none;
+}
+
+input:focus,
+textarea:focus{
+    border-color: #3aa7ff;
+}
+
+button{
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ffd54a;
+    color: #071a33;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+a{
+    align-self: flex-end;
+    color: #d7e6f5;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.nome-projeto{
+    margin: 0;
+    color: #ffd54a;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: #d7e6f5;
+}

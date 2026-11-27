@@ -53,7 +53,7 @@ function criarGraficoDoDeck(modalId) {
       labels: ['Vitórias', 'Derrotas'],
       datasets: [{
         data: [dados.vitorias, dados.derrotas],
-        backgroundColor: ['#01c001', '#ff0000'],
+        backgroundColor: ['#36d17c', '#ff6b76'],
         borderWidth: 0
       }]
     },

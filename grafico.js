@@ -9,8 +9,8 @@ const dadosGrafico = {
     label: 'Win rate',
     data: [vitorias, derrotas],
     backgroundColor: [
-      '#01c001',
-      '#ff0000'
+      '#36d17c',
+      '#ff6b76'
     ],
     hoverOffset: 4
   }]
